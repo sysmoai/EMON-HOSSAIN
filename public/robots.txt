@@ -1,0 +1,8 @@
+# Robots
+User-agent: *
+Allow: /
+Sitemap: https://emonhossain.pro/sitemap.xml
+
+# Block admin paths
+Disallow: /admin
+Disallow: /_astro

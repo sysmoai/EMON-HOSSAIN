@@ -1,0 +1,14 @@
+{
+  "name": "emonhossain-pro",
+  "type": "module",
+  "version": "2.0.0",
+  "description": "Emon Hossain — AI Systems Architect & No-Code Automation Strategist",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.0.0"
+  }
+}
