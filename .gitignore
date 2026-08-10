@@ -1,8 +1,9 @@
 # Dependencies
 node_modules/
-package-lock.json
 pnpm-lock.yaml
 yarn.lock
+
+# Keep package-lock.json tracked for deterministic npm ci builds
 
 # Build output
 dist/
@@ -39,12 +40,7 @@ pnpm-debug.log*
 coverage/
 .nyc_output/
 
-# Build artifacts
-dist/
+# Framework / deployment artifacts
 .next/
 out/
-
-# Vercel
 .vercel/
-.env.local
-.env.production.local
