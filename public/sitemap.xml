@@ -2,7 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://emonhossain.pro/</loc><priority>1.0</priority></url>
   <url><loc>https://emonhossain.pro/about</loc><priority>0.9</priority></url>
-  <url><loc>https://emonhossain.pro/services</loc><priority>0.9</priority></url>
-  <url><loc>https://emonhossain.pro/writing</loc><priority>0.7</priority></url>
+  <url><loc>https://emonhossain.pro/writing</loc><priority>0.8</priority></url>
+  <url><loc>https://emonhossain.pro/blog</loc><priority>0.8</priority></url>
+  <url><loc>https://emonhossain.pro/blog/ai-from-hype</loc><priority>0.6</priority></url>
+  <url><loc>https://emonhossain.pro/blog/founder-branding</loc><priority>0.6</priority></url>
+  <url><loc>https://emonhossain.pro/blog/simple-systems</loc><priority>0.6</priority></url>
+  <url><loc>https://emonhossain.pro/resources</loc><priority>0.7</priority></url>
+  <url><loc>https://emonhossain.pro/services</loc><priority>0.7</priority></url>
+  <url><loc>https://emonhossain.pro/sysmoai</loc><priority>0.6</priority></url>
+  <url><loc>https://emonhossain.pro/bangladeshai</loc><priority>0.6</priority></url>
+  <url><loc>https://emonhossain.pro/speaking</loc><priority>0.6</priority></url>
+  <url><loc>https://emonhossain.pro/philosophy</loc><priority>0.6</priority></url>
+  <url><loc>https://emonhossain.pro/newsletter</loc><priority>0.5</priority></url>
   <url><loc>https://emonhossain.pro/contact</loc><priority>0.7</priority></url>
+  <url><loc>https://emonhossain.pro/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://emonhossain.pro/terms</loc><priority>0.3</priority></url>
 </urlset>

@@ -1,92 +1,134 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const profileSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': 'https://emonhossain.pro/about#profile',
+  url: 'https://emonhossain.pro/about',
+  name: 'About Emon Hossain',
+  mainEntity: {
+    '@type': 'Person',
+    '@id': 'https://emonhossain.pro/#emon-hossain',
+    name: 'Emon Hossain',
+    url: 'https://emonhossain.pro/',
+    jobTitle: 'AI Systems Strategist & Automation Builder',
+    description: 'Bangladesh-based AI systems strategist and automation builder focused on practical AI systems, workflow automation, business operations and AI adoption.',
+    homeLocation: {
+      '@type': 'Place',
+      name: 'Dhaka, Bangladesh'
+    },
+    knowsAbout: [
+      'Applied AI',
+      'AI systems',
+      'Workflow automation',
+      'Business operations',
+      'AI adoption',
+      'Notion systems',
+      'Technical SEO'
+    ],
+    sameAs: [
+      'https://www.youtube.com/@emonhossain_pro',
+      'https://orcid.org/0009-0001-4260-2160'
+    ]
+  }
+};
 ---
 
 <BaseLayout
-  title="About | Emon Hossain — AI Systems Architect & Automation Builder"
-  description="I build systems that save time and generate leverage. BBA NSU 2021. Founder of SYSmoAI, AI Premium Shop, and BangladeshAI. Based in Dhaka."
-  ogTitle="About Emon Hossain — AI Systems Architect"
+  title="About Emon Hossain | AI Systems Strategist & Automation Builder"
+  description="Emon Hossain is a Bangladesh-based AI systems strategist and automation builder focused on practical AI systems, workflow automation, business operations and AI adoption."
+  ogTitle="About Emon Hossain — AI Systems Strategist & Automation Builder"
+  schema={profileSchema}
 >
-  <div class="container" style="padding: 4rem 1.5rem; max-width: 48rem;">
-    <div class="eyebrow">ABOUT</div>
-    <h1 style="font-size: 1.875rem; font-weight: 700; color: var(--brand-ink); margin-top: 1rem;">Practitioner, Not Theorist</h1>
-    <p style="color: var(--brand-stone-600); font-size: 1.125rem; margin-top: 1.5rem; line-height: 1.7;">
-      I build systems that save time and generate leverage. My work sits at the intersection of process automation, AI integration, and Bangladesh's digital infrastructure.
+  <div class="container" style="padding:4rem 1.5rem;max-width:52rem;">
+    <div class="eyebrow">ABOUT EMON HOSSAIN</div>
+    <h1 style="font-size:2.25rem;font-weight:800;color:var(--brand-ink);margin-top:1rem;line-height:1.15;">I build AI systems, test what works, and explain how to use AI in the real world.</h1>
+    <p style="color:var(--brand-stone-600);font-size:1.05rem;margin-top:1.5rem;line-height:1.75;">
+      I’m an AI systems strategist and automation builder based in Bangladesh. My work sits at the intersection of applied AI, workflow design, business operations and practical AI adoption.
     </p>
 
-    <div style="margin-top: 4rem; display: flex; flex-direction: column; gap: 3rem;">
-      <!-- Story -->
+    <div style="margin-top:4rem;display:flex;flex-direction:column;gap:3.5rem;">
       <section>
-        <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--brand-ink); margin-bottom: 1rem;">The Story</h2>
-        <div style="color: var(--brand-stone-600); font-size: 0.875rem; line-height: 1.8; display: flex; flex-direction: column; gap: 1rem;">
-          <p>I started building digital systems years before "AI" became a marketing word. The work was the same as it is today — replace humans clicking buttons with reliable software that runs while everyone sleeps.</p>
-          <p>What changed is the toolkit. Make.com, n8n, Notion, Anthropic, and OpenAI made it possible to ship in days what used to take a six-month engineering build. The constraint stopped being "can we build this" and became "do we know what to build."</p>
-          <p>Most consultants in Bangladesh sell the technology. I sell the outcome — a system that runs, hours saved, money recovered. If a client cannot point to a process that's now invisible to them, I haven't done my job.</p>
-          <p>BangladeshAI grew out of the same instinct. The country was ranked, surveyed, and benchmarked by international agencies — but no one was translating those numbers into operator-level decisions for local businesses. So I started publishing the data, with the gaps mapped and the levers identified.</p>
+        <div class="eyebrow">THE ARC</div>
+        <h2 style="font-size:1.4rem;font-weight:750;color:var(--brand-ink);margin-top:.5rem;">From demand to operations to systems.</h2>
+        <div style="color:var(--brand-stone-600);font-size:.92rem;line-height:1.85;display:flex;flex-direction:column;gap:1rem;margin-top:1rem;">
+          <p>My earlier work in digital marketing and SEO taught me how people discover, evaluate and buy. Operating businesses then made a different problem impossible to ignore: growth is often constrained by repetitive work, fragmented information and processes that depend on someone remembering the next step.</p>
+          <p>That pushed my work toward operating systems, workflow automation and eventually applied AI. I use AI where judgment, language or interpretation helps, and deterministic automation where consistency matters more than novelty.</p>
+          <p>I also study the wider AI adoption problem in Bangladesh and other emerging-market contexts. That research is kept distinct from commercial work so evidence, incentives and affiliations remain clear.</p>
         </div>
       </section>
 
-      <!-- Philosophy -->
       <section>
-        <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--brand-ink); margin-bottom: 1rem;">The Philosophy</h2>
-        <div style="color: var(--brand-stone-600); font-size: 0.875rem; line-height: 1.8; display: flex; flex-direction: column; gap: 1rem;">
-          <p>Most businesses in Bangladesh run on human bandwidth. People are acting as APIs — copying data from one system, formatting it, and pasting it into another. This is fragile, unscalable, and ultimately limits the growth of the private sector.</p>
-          <p>I believe in deterministic systems for reliable tasks (invoicing, reporting, data movement) and probabilistic models (LLMs) for cognitive tasks (summarization, sentiment analysis, drafting).</p>
-          <p>Bangladesh doesn't need more conference panels about AI. It needs operators who can wire up Make.com, write custom Python scripts, securely connect local APIs like bKash, and hand over a functioning system that saves 15 hours a week.</p>
-        </div>
-      </section>
-
-      <!-- Stack -->
-      <section>
-        <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--brand-ink); margin-bottom: 1rem;">The Stack</h2>
-        <div style="display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr);">
-          <div style="background: white; border: 1px solid var(--brand-stone-200); border-radius: 0.75rem; padding: 1rem;">
-            <div style="color: var(--brand-stone-400); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em;">Automation</div>
-            <div style="color: var(--brand-ink); font-size: 0.875rem; font-weight: 600; margin-top: 0.25rem;">Make.com, n8n, Zapier</div>
+        <div class="eyebrow">HOW I WORK</div>
+        <h2 style="font-size:1.4rem;font-weight:750;color:var(--brand-ink);margin-top:.5rem;">Proof before hype.</h2>
+        <div class="grid-2" style="margin-top:1.25rem;">
+          <div class="entity-card">
+            <div class="role">SYSTEMS FIRST</div>
+            <h3>Start with the process</h3>
+            <p>Map the work, the owner, the handoffs, the failure modes and the definition of done before choosing a tool.</p>
           </div>
-          <div style="background: white; border: 1px solid var(--brand-stone-200); border-radius: 0.75rem; padding: 1rem;">
-            <div style="color: var(--brand-stone-400); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em;">Architecture</div>
-            <div style="color: var(--brand-ink); font-size: 0.875rem; font-weight: 600; margin-top: 0.25rem;">Notion, Airtable, Xano</div>
+          <div class="entity-card">
+            <div class="role">EVIDENCE FIRST</div>
+            <h3>Show what can be checked</h3>
+            <p>Results, ratings, customer counts and performance numbers belong in public only when the supporting evidence is current and correctly scoped.</p>
           </div>
-          <div style="background: white; border: 1px solid var(--brand-stone-200); border-radius: 0.75rem; padding: 1rem;">
-            <div style="color: var(--brand-stone-400); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em;">Development</div>
-            <div style="color: var(--brand-ink); font-size: 0.875rem; font-weight: 600; margin-top: 0.25rem;">Python, React, Node.js</div>
+          <div class="entity-card">
+            <div class="role">HUMAN CONTROL</div>
+            <h3>Automate with boundaries</h3>
+            <p>AI can assist reasoning and execution, but consequential actions still need clear permissions, review points and traceability.</p>
           </div>
-          <div style="background: white; border: 1px solid var(--brand-stone-200); border-radius: 0.75rem; padding: 1rem;">
-            <div style="color: var(--brand-stone-400); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em;">AI Models</div>
-            <div style="color: var(--brand-ink); font-size: 0.875rem; font-weight: 600; margin-top: 0.25rem;">OpenAI, Anthropic, Claude</div>
+          <div class="entity-card">
+            <div class="role">BANGLADESH → GLOBAL</div>
+            <h3>Grounded locally, useful broadly</h3>
+            <p>I care about local constraints such as language, small teams and uneven digital infrastructure without positioning Bangladesh as a low-end market.</p>
           </div>
         </div>
       </section>
 
-      <!-- Timeline -->
       <section>
-        <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--brand-ink); margin-bottom: 1rem;">Timeline</h2>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div style="display: flex; gap: 1rem;">
-            <div style="width: 0.125rem; background: linear-gradient(145deg, var(--brand-indigo), var(--brand-sky), var(--brand-emerald)); flex-shrink: 0;"></div>
-            <div>
-              <div style="color: var(--brand-stone-400); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em;">2024 — Present</div>
-              <h3 style="font-weight: 700; color: var(--brand-ink); margin-top: 0.25rem;">Founder, AI Premium Shop</h3>
-              <p style="color: var(--brand-stone-600); font-size: 0.875rem; margin-top: 0.25rem;">Building Bangladesh's AI subscription marketplace. Thousands of customers served.</p>
-            </div>
+        <div class="eyebrow">CAPABILITIES</div>
+        <h2 style="font-size:1.4rem;font-weight:750;color:var(--brand-ink);margin-top:.5rem;">What I work with.</h2>
+        <div class="grid-2" style="margin-top:1.25rem;">
+          <div class="entity-card">
+            <div class="role">SYSTEM DESIGN</div>
+            <h3>Workflows & operating systems</h3>
+            <p>Notion-based systems, process mapping, SOP architecture, information structure and operational handoffs.</p>
           </div>
-          <div style="display: flex; gap: 1rem;">
-            <div style="width: 0.125rem; background: linear-gradient(145deg, var(--brand-indigo), var(--brand-sky), var(--brand-emerald)); flex-shrink: 0;"></div>
-            <div>
-              <div style="color: var(--brand-stone-400); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em;">2024 — Present</div>
-              <h3 style="font-weight: 700; color: var(--brand-ink); margin-top: 0.25rem;">Founder, BangladeshAI</h3>
-              <p style="color: var(--brand-stone-600); font-size: 0.875rem; margin-top: 0.25rem;">Publishing the definitive research on national AI readiness. Mapping 67 critical gaps across 15 domains.</p>
-            </div>
+          <div class="entity-card">
+            <div class="role">AUTOMATION</div>
+            <h3>Low-code workflow orchestration</h3>
+            <p>Tools such as n8n, Make and Zapier, selected according to the workflow rather than treated as the product.</p>
           </div>
-          <div style="display: flex; gap: 1rem;">
-            <div style="width: 0.125rem; background: linear-gradient(145deg, var(--brand-indigo), var(--brand-sky), var(--brand-emerald)); flex-shrink: 0;"></div>
-            <div>
-              <div style="color: var(--brand-stone-400); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em;">2023 — Present</div>
-              <h3 style="font-weight: 700; color: var(--brand-ink); margin-top: 0.25rem;">Founder, SYSmoAI</h3>
-              <p style="color: var(--brand-stone-600); font-size: 0.875rem; margin-top: 0.25rem;">Building no-code and AI systems for Bangladeshi SMBs and agencies.</p>
-            </div>
+          <div class="entity-card">
+            <div class="role">APPLIED AI</div>
+            <h3>LLM-assisted workflows</h3>
+            <p>Prompt/workflow design, AI tool integration, model-assisted drafting, analysis and agent-style orchestration with human review where needed.</p>
           </div>
+          <div class="entity-card">
+            <div class="role">WEB & DISCOVERY</div>
+            <h3>Web tooling, SEO & prototyping</h3>
+            <p>Technical SEO, website systems, AI-assisted web prototyping and light scripting/integration work when it supports the larger system.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="eyebrow">ROLES</div>
+        <h2 style="font-size:1.4rem;font-weight:750;color:var(--brand-ink);margin-top:.5rem;">Different contexts, one person.</h2>
+        <div style="color:var(--brand-stone-600);font-size:.92rem;line-height:1.85;display:flex;flex-direction:column;gap:1rem;margin-top:1rem;">
+          <p>For commercial AI systems and automation work, I operate through the appropriate business context, including SYSmoAI where relevant. Scope, delivery and pricing are confirmed for the actual engagement rather than inferred from old public packages.</p>
+          <p>For academic submissions, my affiliation is <strong>Independent Researcher, Dhaka, Bangladesh</strong>. BangladeshAI.Org is a research/public-interest surface and is not used as my formal academic institutional affiliation.</p>
+          <p>For creator and education work, I focus on making AI systems, tools and opportunities easier to understand for Bangla- and English-speaking audiences.</p>
+        </div>
+      </section>
+
+      <section style="padding:2rem;background:white;border:1px solid var(--brand-stone-200);border-radius:1rem;">
+        <div class="eyebrow">NEXT</div>
+        <h2 style="font-size:1.25rem;font-weight:750;color:var(--brand-ink);margin-top:.5rem;">Explore the work, not just the bio.</h2>
+        <div class="hero-cta" style="margin-top:1.25rem;">
+          <a href="/writing" class="btn-primary">Read My Writing</a>
+          <a href="/contact" class="btn-outline">Contact Me</a>
         </div>
       </section>
     </div>
