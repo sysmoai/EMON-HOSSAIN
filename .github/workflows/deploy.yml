@@ -1,15 +1,18 @@
-﻿name: Deploy to Cloudflare Pages
+name: Verify EMON HOSSAIN Site
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  build-and-deploy:
+  verify:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,25 +24,14 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
-        continue-on-error: true
+        run: npm ci
 
-      - name: Build project
-        run: npm run build || echo "Build optional for this project"
-        continue-on-error: true
+      - name: Build
+        run: npm run build
 
-      - name: Install Wrangler
-        run: npm install -g wrangler
+      - name: Verify Astro output
+        run: test -f dist/index.html
 
-      - name: Deploy to Cloudflare Pages
-        env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: |
-          if [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "Deploying with Account ID..."
-            wrangler pages deploy . --project-name=${{ github.event.repository.name }} || true
-          else
-            echo "Account ID not set, deployment will use OAuth flow on first run"
-            wrangler pages deploy . --project-name=${{ github.event.repository.name }} || true
-          fi
-        continue-on-error: true
+# Production deployment is intentionally disabled until the actual
+# emonhossain.pro hosting project, credentials, output directory, and rollback
+# path are verified. Deployment should be a separate gated job.
