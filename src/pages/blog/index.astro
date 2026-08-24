@@ -3,88 +3,36 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Writing | Emon Hossain — AI Systems & No-Code Strategy"
-  description="Essays on AI automation, no-code systems, and strategic thinking for Bangladeshi businesses."
-  ogTitle="Writing — Emon Hossain"
+  title="Build Notes | Emon Hossain — Practical AI Systems & Automation"
+  description="Build notes and essays by Emon Hossain on practical AI systems, automation, founder systems and AI adoption."
+  ogTitle="Build Notes — Emon Hossain"
 >
-  <!-- HERO -->
   <section class="container hero">
-    <div class="eyebrow">WRITING</div>
-    <h1>Thinking out loud<br /><span class="gradient-text">about AI and systems.</span></h1>
-    <p>Essays on automation, strategy, and the gap between hype and reality. No speculation — just evidence from building systems for Bangladeshi businesses.</p>
+    <div class="eyebrow">BUILD NOTES</div>
+    <h1>Ideas should earn their way into public.</h1>
+    <p>This section is for original build notes, tests, sourced research and practical frameworks. Draft topics are labeled clearly until the underlying work is ready to publish.</p>
   </section>
 
-  <!-- BLOG POSTS -->
   <section class="section container">
     <div class="grid-2">
-      <a href="/blog/ai-from-hype" class="blog-card">
-        <div class="blog-header">
-          <h3>AI From Hype</h3>
-          <div class="blog-tag">FROM MARKETING WORD TO OPERATIONAL LEVER</div>
-        </div>
-        <p>The gap between "AI" as a marketing label and "AI" as a tool that actually saves time in a Bangladeshi business. What works, what doesn't, and why you should care.</p>
-        <div class="blog-footer">
-          <span class="read-time">Coming soon</span>
-          <span class="arrow">Read →</span>
-        </div>
+      <a href="/blog/ai-from-hype" class="entity-card">
+        <div class="role">DRAFT TOPIC · APPLIED AI</div>
+        <h3>AI From Hype to Useful Work</h3>
+        <p>A framework for evaluating whether AI is improving a workflow or merely adding novelty and complexity.</p>
+        <div class="arrow">Preview topic →</div>
       </a>
-
-      <a href="/blog/founder-branding" class="blog-card">
-        <div class="blog-header">
-          <h3>Founder Branding</h3>
-          <div class="blog-tag">BUILDING LEVERAGE THROUGH CONVICTION</div>
-        </div>
-        <p>Why founder brands work. How to build one without becoming a personality cult. And why Bangladesh needs more operators with clear conviction.</p>
-        <div class="blog-footer">
-          <span class="read-time">Coming soon</span>
-          <span class="arrow">Read →</span>
-        </div>
+      <a href="/blog/founder-branding" class="entity-card">
+        <div class="role">DRAFT TOPIC · BRAND SYSTEMS</div>
+        <h3>Founder Branding vs. Product Branding</h3>
+        <p>How personal reputation, company identity and business claims can reinforce one another without becoming the same thing.</p>
+        <div class="arrow">Preview topic →</div>
       </a>
-
-      <a href="/blog/simple-systems" class="blog-card">
-        <div class="blog-header">
-          <h3>Simple Systems</h3>
-          <div class="blog-tag">DESIGNING FOR HUMANS, NOT ALGORITHMS</div>
-        </div>
-        <p>The most valuable systems are the ones people actually use. Why complexity kills adoption. And the design principles that matter.</p>
-        <div class="blog-footer">
-          <span class="read-time">Coming soon</span>
-          <span class="arrow">Read →</span>
-        </div>
+      <a href="/blog/simple-systems" class="entity-card">
+        <div class="role">DRAFT TOPIC · SYSTEM DESIGN</div>
+        <h3>Simple Systems Outperform Complex Ones</h3>
+        <p>Why fewer moving parts, clearer ownership and visible exceptions often matter more than a larger automation stack.</p>
+        <div class="arrow">Preview topic →</div>
       </a>
     </div>
   </section>
-
-  <style>
-    .hero { padding: 5rem 0 4rem; }
-    @media (min-width: 768px) { .hero { padding: 7rem 0 5rem; } }
-    .hero h1 { font-size: 2.25rem; font-weight: 700; color: var(--brand-ink); line-height: 1.2; margin-top: 1rem; }
-    @media (min-width: 768px) { .hero h1 { font-size: 3.75rem; } }
-    .hero p { color: var(--brand-stone-600); font-size: 1.125rem; margin-top: 1.5rem; max-width: 36rem; line-height: 1.7; }
-    .hero .eyebrow { margin-bottom: 1rem; }
-
-    .blog-card {
-      border-radius: 1rem; border: 1px solid var(--brand-stone-200);
-      background: white; padding: 2rem; transition: all 0.2s ease;
-      display: flex; flex-direction: column;
-    }
-    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(79,70,229,0.12); }
-    .blog-header { margin-bottom: 1rem; }
-    .blog-card h3 { font-size: 1.5rem; font-weight: 700; color: var(--brand-ink); }
-    .blog-tag {
-      font-size: 0.625rem; font-weight: 600; letter-spacing: 0.36em;
-      text-transform: uppercase; color: var(--brand-stone-400); margin-top: 0.5rem;
-    }
-    .blog-card p {
-      color: var(--brand-stone-600); font-size: 1rem; line-height: 1.7;
-      margin-top: 1rem; flex-grow: 1;
-    }
-    .blog-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brand-stone-100);
-    }
-    .read-time { color: var(--brand-stone-400); font-size: 0.875rem; }
-    .arrow { color: var(--brand-indigo); font-weight: 600; transition: gap 0.2s; }
-    .blog-card:hover .arrow { margin-left: 0.25rem; }
-  </style>
 </BaseLayout>
