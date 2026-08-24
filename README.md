@@ -1,194 +1,127 @@
 # Emon Hossain — emonhossain.pro
 
-Personal brand and professional portfolio website for Emon Hossain, AI Systems Architect & No-Code Automation Strategist.
+Personal authority and professional portfolio site for **Emon Hossain — AI Systems Strategist & Automation Builder**.
 
-**Live:** https://emonhossain.pro
+**Canonical site:** https://emonhossain.pro
 
-## Overview
+## Purpose
 
-A modern, performance-optimized website showcasing:
-- Personal brand positioning and services
-- AI systems strategy and automation consulting
-- Links to SYSmoAI, AI Premium Shop, and BangladeshAI
-- Blog/writing section (coming soon with full content)
-- Contact and consultation booking
+The website is designed to present one consistent, evidence-led public identity across:
 
-Built with **Astro 4** for maximum performance and SEO.
+- practical AI systems and workflow automation;
+- original build notes and AI-tool testing;
+- business and operations thinking;
+- Bangladesh-focused AI adoption and research;
+- relevant commercial, creator, speaking and media contact.
+
+The site is **not** a mixed storefront for every business in the portfolio. Commercial work and public-interest research are linked in their proper contexts rather than merged into one set of claims.
+
+## Current Brand Truth
+
+- **Public name:** EMON HOSSAIN
+- **Professional title:** AI Systems Strategist & Automation Builder
+- **Core territory:** Practical AI Systems · Automation · Business
+- **Public promise:** I build AI systems, test what works, and explain how to use AI in the real world.
+- **Doctrine:** Proof over hype.
+- **Location frame:** Bangladesh-based, globally relevant.
+- **Academic affiliation when formally required:** Independent Researcher, Dhaka, Bangladesh.
+
+### Claim rule
+
+**No number without proof.** Public performance results, ratings, customer counts, revenue, ROI, time saved, project counts, rankings, prices, delivery guarantees, partner status and incorporation claims require current evidence, correct business-unit scope and public-use approval.
+
+## Visual System
+
+The current EMON master brand is **monochrome + Signal Red**.
+
+- Emon Ink: `#0B0D10`
+- Carbon: `#15181D`
+- Graphite: `#23272E`
+- Pure White: `#FFFFFF`
+- Paper: `#F5F5F3`
+- Steel: `#A7ADB4`
+- Signal Red: `#D61F26` — used sparingly
+- Latin type: Inter
+- Bangla type: Noto Sans Bengali
+
+The older Indigo/Sky/Emerald gradient system is retired from the EMON master brand.
+
+**Important asset gap:** the approved black-and-white illustrated Emon portrait is the fixed master identity mark, but the exact production source has not yet been committed to this repository. The legacy favicon/temporary text mark must not be treated as the final portrait asset.
 
 ## Tech Stack
 
-- **Framework:** Astro 4
-- **Styling:** CSS-in-JS (embedded in layout)
-- **Hosting:** Cloudflare Pages / Vercel
-- **Domain:** emonhossain.pro
+- Astro 4
+- Static HTML/CSS
+- Cloudflare Pages deployment target
+- GitHub Actions build verification
 
-## Project Structure
+## Local Development
 
-```
-src/
-├── layouts/
-│   └── BaseLayout.astro      # Main layout with navigation, footer, styles
-├── pages/
-│   ├── index.astro           # Homepage
-│   ├── about.astro           # About page
-│   ├── services.astro        # Services & pricing
-│   ├── writing.astro         # Writing/Blog landing
-│   ├── blog/
-│   │   ├── index.astro       # Blog post listing
-│   │   ├── ai-from-hype.astro
-│   │   ├── founder-branding.astro
-│   │   └── simple-systems.astro
-│   ├── contact.astro         # Contact page
-│   ├── bangladeshai.astro    # BangladeshAI link
-│   ├── sysmoai.astro         # SYSmoAI link
-│   ├── philosophy.astro      # Philosophy page
-│   ├── resources.astro       # Resources page
-│   ├── newsletter.astro      # Newsletter signup
-│   ├── speaking.astro        # Speaking engagements
-│   ├── privacy.astro         # Privacy policy
-│   ├── terms.astro           # Terms of service
-│   └── 404.astro             # Not found page
-public/
-├── favicon.svg
-├── robots.txt
-└── sitemap.xml
-astro.config.mjs              # Astro configuration
-package.json                  # Dependencies & scripts
-tsconfig.json                 # TypeScript config
-```
-
-## Development
-
-### Install Dependencies
 ```bash
-npm install
-# or
-pnpm install
-```
-
-### Start Dev Server
-```bash
+npm ci
 npm run dev
 ```
 
-Server runs on `http://localhost:4321`
+Production build:
 
-### Build for Production
 ```bash
 npm run build
-```
-
-Output: `dist/` directory
-
-### Preview Production Build
-```bash
 npm run preview
 ```
 
-## Pages
+## Public Routes
 
-| Page | Route | Status |
-|------|-------|--------|
-| Homepage | `/` | ✅ Live |
-| About | `/about` | ✅ Live |
-| Services & Pricing | `/services` | ✅ Live |
-| Writing | `/writing` | ✅ Live |
-| Blog Listing | `/blog` | ✅ Live |
-| Blog: AI From Hype | `/blog/ai-from-hype` | 🔄 Coming Soon (content) |
-| Blog: Founder Branding | `/blog/founder-branding` | 🔄 Coming Soon (content) |
-| Blog: Simple Systems | `/blog/simple-systems` | 🔄 Coming Soon (content) |
-| Contact | `/contact` | ✅ Live |
-| Privacy Policy | `/privacy` | ✅ Live |
-| Terms of Service | `/terms` | ✅ Live |
-| Philosophy | `/philosophy` | ✅ Live |
-| Resources | `/resources` | ✅ Live |
-| Newsletter | `/newsletter` | ✅ Live |
-| Speaking | `/speaking` | ✅ Live |
-| BangladeshAI | `/bangladeshai` | ✅ Live |
-| SYSmoAI | `/sysmoai` | ✅ Live |
+- `/` — authority homepage
+- `/about` — canonical person/profile surface
+- `/writing` and `/blog` — build notes and draft topics
+- `/resources` — public-safe resources
+- `/services` — ways to work together; no stale fixed public pricing
+- `/sysmoai` — commercial AI-systems context
+- `/bangladeshai` — research/public-interest context
+- `/speaking` — talks/workshops/media
+- `/philosophy` — systems doctrine
+- `/newsletter` — transparent pre-launch state
+- `/contact` — public inquiry routing
+- `/privacy` and `/terms` — website notices
 
-## Brand
+## Search / Entity Controls
 
-**Logo:** "E" (Emon initial) in gradient (indigo → sky → emerald)
+The layout provides canonical URLs and Open Graph URL metadata. The `/about` page supplies a `ProfilePage`/`Person` JSON-LD entity using only currently verified identity links.
 
-**Color System:**
-- Primary: Indigo (#4F46E5)
-- Secondary: Sky (#0EA5E9)
-- Accent: Emerald (#10B981)
-- Dark: Ink (#0F172A)
-- Light: Paper (#FAFAF9)
+The target entity is:
 
-**Typography:**
-- Font: Inter
-- Weights: 400, 500, 600, 700, 800
+> **Emon Hossain — AI Systems Strategist & Automation Builder — Bangladesh**
 
-## Services Offered
+Same-name collisions are expected; the strategy is entity consistency, not name-only ranking.
 
-1. **AI Profit Audit** — 4,999 BDT (3 days)
-2. **Workflow Build Sprint** — 24,999+ BDT (7-14 days)
-3. **Advisory Retainer** — 14,999 BDT/month (ongoing)
-4. **Premium 1:1 Consultation** — 4,999 BDT/hour (min 2hrs)
-5. **Enterprise Workshop** — 49,999+ BDT (half/full day)
-6. **Templates & SOP Packs** — Free/Paid
+## Deployment Controls
+
+Pull requests run a clean `npm ci` + `npm run build` verification workflow.
+
+The production deploy workflow is designed to:
+
+1. fail on install/build errors;
+2. require Cloudflare credentials;
+3. deploy the generated `dist/` output rather than the repository root.
+
+Do not treat a deployment as verified until the build passes and the production URL is checked after merge.
+
+## Repository Hygiene Gap
+
+Historical commits currently contain tracked generated/dependency directories such as `node_modules/`, `dist/` and `.astro/` even though they are ignored for future work. They should be removed from the Git index in a one-time authenticated cleanup, for example:
+
+```bash
+git rm -r --cached node_modules dist .astro
+git add .gitignore package-lock.json
+git commit -m "chore: stop tracking generated artifacts"
+```
+
+Keep `package-lock.json` tracked so `npm ci` remains deterministic.
 
 ## Contact
 
-- **Email:** contact@emonhossain.pro
-- **WhatsApp:** +880 1865-385348
-- **Location:** Dhaka, Bangladesh
-- **Hours:** Sun-Thu 10 AM - 7 PM BST
+Public inquiries: `contact@emonhossain.pro`
 
-## Deployment
-
-### Cloudflare Pages
-Automatic deployment on push to main branch.
-
-**Build Command:** `npm run build`  
-**Output Directory:** `dist/`
-
-### Vercel (Alternative)
-```bash
-vercel --prod
-```
-
-## Analytics & Monitoring
-
-- Cookie consent banner included (GDPR-ready)
-- Performance optimized (Astro static generation)
-- SEO optimized (meta tags, sitemap, robots.txt)
-- Mobile responsive (tested on all breakpoints)
-
-## Blog Content Status
-
-Blog posts are currently marked "Coming Soon" with introductory descriptions:
-
-- **AI From Hype** — Gap between marketing hype and operational reality
-- **Founder Branding** — Building leverage through conviction
-- **Simple Systems** — Designing systems people actually use
-
-Full content to be added soon.
-
-## Next Steps
-
-1. ✅ Add full blog post content
-2. ✅ Complete philosophy page
-3. ✅ Complete resources page
-4. ✅ Set up email contact form integration
-5. ✅ Add analytics tracking
-
-## Git
-
-**Repository:** https://github.com/sysmoai/EMON-HOSSAIN.git
-
-**Remotes:**
-- `origin` → GitHub (primary)
-- `replit` → Replit (backup)
-
-## License
+## Copyright
 
 © 2026 Emon Hossain. All rights reserved.
-
----
-
-**Built with Astro 4** — The web framework for content-driven websites.  
-**Deployed on Cloudflare Pages & Vercel** — Edge performance, global CDN.
