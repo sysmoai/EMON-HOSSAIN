@@ -101,11 +101,11 @@ const ogImageURL = ogImage ? new URL(ogImage, siteOrigin).toString() : undefined
     .btn-outline:hover { background: white; border-color: var(--brand-red); }
 
     .section-title { text-align: center; margin-bottom: 3rem; }
-    .section-title h2 {
+    .section-title h2, .section-title h1 {
       font-size: 1.5rem; font-weight: 750; color: var(--brand-ink);
       letter-spacing: -0.025em; margin-top: 0.5rem;
     }
-    @media (min-width: 768px) { .section-title h2 { font-size: 1.95rem; } }
+    @media (min-width: 768px) { .section-title h2, .section-title h1 { font-size: 1.95rem; } }
     .section-title p { color: var(--brand-stone-500); margin-top: 0.75rem; font-size: 0.9rem; max-width: 40rem; margin-left: auto; margin-right: auto; }
 
     .grid-4, .grid-3, .grid-2 { display: grid; gap: 1rem; }
@@ -132,7 +132,29 @@ const ogImageURL = ogImage ? new URL(ogImage, siteOrigin).toString() : undefined
     .nav-logo-text .line1, .footer .line1 { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
     .nav-logo-text .line2, .footer .line2 { font-size: 0.55rem; color: var(--brand-stone-400); letter-spacing: 0.08em; text-transform: uppercase; }
     .nav-links { display: none; }
+    /* Mobile site navigation without JavaScript. */
+    .mobile-nav { display: block; position: relative; margin-left: auto; }
+    .mobile-nav summary {
+      list-style: none; cursor: pointer; font-weight: 700; font-size: .84rem;
+      padding: .48rem .75rem; border-radius: .55rem; border: 1px solid var(--brand-stone-300);
+      background: white; color: var(--brand-ink);
+    }
+    .mobile-nav summary::-webkit-details-marker { display: none; }
+    .mobile-nav-panel {
+      display: grid; gap: .1rem; position: absolute; z-index: 60;
+      top: calc(100% + .5rem); right: 0;
+      width: min(17rem, calc(100vw - 2.5rem));
+      padding: .6rem; background: white; border-radius: .8rem;
+      border: 1px solid var(--brand-stone-200);
+      box-shadow: 0 10px 32px rgba(11,13,16,.14);
+    }
+    .mobile-nav-panel a { display: block; padding: .65rem .75rem; color: var(--brand-ink); border-radius: .4rem; font-size: .9rem; }
+    .mobile-nav-panel a:hover { background: var(--brand-paper); }
+    .nav-cta { display: none; }
+    :where(a, summary):focus-visible { outline: 3px solid var(--brand-red); outline-offset: 3px; }
     @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .nav-cta { display: inline-flex; }
       .nav-links { display: flex; align-items: center; gap: 1.4rem; }
       .nav-links a { font-size: 0.875rem; color: var(--brand-stone-600); }
       .nav-links a:hover { color: var(--brand-red); }
@@ -209,6 +231,17 @@ const ogImageURL = ogImage ? new URL(ogImage, siteOrigin).toString() : undefined
         <a href="/resources">Resources</a>
         <a href="/contact">Contact</a>
       </div>
+      <details class="mobile-nav">
+        <summary>Menu</summary>
+        <nav class="mobile-nav-panel" aria-label="Mobile primary navigation">
+          <a href="/solutions">Solutions</a>
+          <a href="/about">About</a>
+          <a href="/writing">Writing</a>
+          <a href="/resources">Resources</a>
+          <a href="/services">Work With Me</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </details>
       <a href="/contact" class="nav-cta">Work with me →</a>
     </div>
   </nav>
