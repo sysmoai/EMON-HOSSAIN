@@ -106,7 +106,7 @@ const ogImageURL = ogImage ? new URL(ogImage, siteOrigin).toString() : undefined
       letter-spacing: -0.025em; margin-top: 0.5rem;
     }
     @media (min-width: 768px) { .section-title h2, .section-title h1 { font-size: 1.95rem; } }
-    .section-title p { color: var(--brand-stone-500); margin-top: 0.75rem; font-size: 0.9rem; max-width: 40rem; margin-left: auto; margin-right: auto; }
+    .section-title p { color: var(--brand-stone-600); margin-top: 0.75rem; font-size: 0.9rem; max-width: 40rem; margin-left: auto; margin-right: auto; }
 
     .grid-4, .grid-3, .grid-2 { display: grid; gap: 1rem; }
     @media (min-width: 768px) {
@@ -130,7 +130,9 @@ const ogImageURL = ogImage ? new URL(ogImage, siteOrigin).toString() : undefined
       font-size: 0.75rem; font-weight: 800; color: white;
     }
     .nav-logo-text .line1, .footer .line1 { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
-    .nav-logo-text .line2, .footer .line2 { font-size: 0.55rem; color: var(--brand-stone-400); letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-logo-text .line2, .footer .line2 { font-size: 0.55rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-logo-text .line2 { color: var(--brand-stone-600); }
+    .footer .line2 { color: var(--brand-steel); }
     .nav-links { display: none; }
     /* Mobile site navigation without JavaScript. */
     .mobile-nav { display: block; position: relative; margin-left: auto; }
@@ -179,7 +181,7 @@ const ogImageURL = ogImage ? new URL(ogImage, siteOrigin).toString() : undefined
       transform: translateY(-2px); border-color: rgba(214,31,38,.3); box-shadow: 0 10px 28px rgba(11,13,16,.06);
     }
     .entity-card .icon { width: 2.5rem; height: 2.5rem; border-radius: 0.55rem; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 1rem; }
-    .entity-card .role, .service-card .phase { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand-stone-400); }
+    .entity-card .role, .service-card .phase { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand-stone-600); }
     .entity-card h3, .service-card h3, .proof-card h3 { color: var(--brand-ink); margin-top: 0.3rem; font-weight: 750; }
     .entity-card p, .service-card .desc, .proof-card p { color: var(--brand-stone-600); font-size: 0.875rem; margin-top: 0.55rem; line-height: 1.65; }
     .entity-card .arrow, .service-card .cta { color: var(--brand-red); font-size: 0.875rem; font-weight: 700; margin-top: 1rem; display: inline-flex; gap: .25rem; }
@@ -192,9 +194,10 @@ const ogImageURL = ogImage ? new URL(ogImage, siteOrigin).toString() : undefined
     @media (min-width: 768px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
     .contact-card .label { font-size: 1rem; font-weight: 750; margin-bottom: .25rem; color: var(--brand-ink); }
     .contact-card .value { color: var(--brand-stone-600); font-size: .875rem; }
-    .contact-card .hint { color: var(--brand-stone-400); font-size: .75rem; margin-top: .25rem; }
+    .contact-card .hint { color: var(--brand-stone-600); font-size: .75rem; margin-top: .25rem; }
 
     .data-section { background: var(--brand-ink); color: white; }
+    .data-section .eyebrow { color: #FF7278; } /* 7.35:1 on ink for small uppercase text */
     .data-grid { display: grid; gap: 1rem; }
     @media (min-width: 768px) { .data-grid { grid-template-columns: repeat(3,1fr); } }
     .data-item { padding: 1.25rem; border: 1px solid rgba(255,255,255,.12); border-radius: .8rem; }
@@ -210,7 +213,7 @@ const ogImageURL = ogImage ? new URL(ogImage, siteOrigin).toString() : undefined
     .footer a:hover { color: white; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 2.5rem; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
     @media (min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
-    .footer-bottom p, .footer-bottom a { color: #747A81; font-size: .75rem; }
+    .footer-bottom p, .footer-bottom a { color: var(--brand-steel); font-size: .75rem; }
     .footer-bottom-links { display: flex; gap: 1rem; }
   </style>
 </head>
