@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+interface Item { title: string; detail: string }
+interface Metric { name: string; method: string }
+interface Question { question: string; answer: string }
+interface Related { href: string; title: string }
+interface Props {
+ shortTitle: string; title: string; description: string; heading: string;
+ lead: string; banglaSummary: string; audiences: string[];
+ problems: Item[]; steps: Item[]; safeguards: string[];
+ deliverables: string[]; metrics: Metric[];
+ questions: Question[]; related: Related[];
+}
+const { shortTitle, title, description, heading, lead, banglaSummary,
+ audiences, problems, steps, safeguards, deliverables, metrics, questions, related } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <div class="container solution-root">
+    <nav aria-label="Breadcrumb" class="solution-crumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/solutions">Solutions</a><span aria-hidden="true">/</span><span aria-current="page">{shortTitle}</span></nav>
+    <header class="solution-heading">
+      <div class="eyebrow">PRACTICAL AI SYSTEMS · SOLUTION NOTE</div>
+      <h1>{heading}</h1>
+      <p class="solution-lead">{lead}</p>
+      <p lang="bn" class="solution-bangla">{banglaSummary}</p>
+      <div class="hero-cta"><a class="btn-primary" href="/contact">Discuss a relevant workflow</a><a class="btn-outline" href="/solutions">All solution notes</a></div>
+      <p class="solution-disclosure">Illustrative implementation patterns, not claims of completed client projects, verified savings, guaranteed results or fixed-price products.</p>
+    </header>
+    <section aria-labelledby="fit" class="solution-section">
+      <div class="eyebrow">FIT</div><h2 id="fit">Who may benefit</h2>
+      <ul class="solution-tags">{audiences.map(item => <li>{item}</li>)}</ul>
+    </section>
+    <section aria-labelledby="problems" class="solution-section">
+      <div class="eyebrow">START WITH THE PROBLEM</div><h2 id="problems">The work that breaks down</h2>
+      <div class="grid-2">{problems.map(item => <div class="entity-card"><h3>{item.title}</h3><p>{item.detail}</p></div>)}</div>
+    </section>
+    <section aria-labelledby="workflow" class="solution-section">
+      <div class="eyebrow">EXAMPLE, NOT A DEPLOYED CLAIM</div><h2 id="workflow">What a scoped workflow could look like</h2>
+      <ol class="solution-steps">{steps.map((item, index) =>
+        <li><div class="step-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</div><div><h3>{item.title}</h3><p>{item.detail}</p></div></li>
+      )}</ol>
+    </section>
+    <section aria-labelledby="safety" class="solution-section">
+      <div class="eyebrow">RELIABILITY & ACCOUNTABILITY</div><h2 id="safety">Controls that matter</h2>
+      <ul class="solution-list">{safeguards.map(item => <li>{item}</li>)}</ul>
+    </section>
+    <section aria-labelledby="scope" class="solution-section">
+      <div class="eyebrow">SCOPED ENGAGEMENT</div><h2 id="scope">What a proposed delivery might include</h2>
+      <ul class="solution-list">{deliverables.map(item => <li>{item}</li>)}</ul>
+      <p class="solution-note">The actual provider, dependencies, price, timeline, ongoing support, data access and acceptance criteria must be confirmed in writing. Commercial implementation may be handled through SYSmoAI in its own business context.</p>
+    </section>
+    <section aria-labelledby="metrics" class="solution-section">
+      <div class="eyebrow">MEASUREMENT BEFORE CLAIMS</div><h2 id="metrics">How to evaluate a pilot</h2>
+      <div class="grid-2">{metrics.map(metric => <div class="entity-card"><h3>{metric.name}</h3><p>{metric.method}</p></div>)}</div>
+      <p class="solution-note">No client result or return on investment is implied. Measure the baseline first, then evaluate pilot results and operating cost.</p>
+    </section>
+    <section aria-labelledby="questions" class="solution-section">
+      <div class="eyebrow">BEFORE BUILDING</div><h2 id="questions">Questions that shape the design</h2>
+      <div class="solution-faq">{questions.map(item => <div><h3>{item.question}</h3><p>{item.answer}</p></div>)}</div>
+    </section>
+    <section aria-labelledby="related" class="solution-section">
+      <div class="eyebrow">RELATED WORK</div><h2 id="related">Explore other options</h2>
+      <div class="grid-2">{related.map(item => <a class="entity-card" href={item.href}><h3>{item.title}</h3><p>Read the problem, workflow, safeguards and measurement approach.</p><span class="solution-arrow">Read solution →</span></a>)}</div>
+    </section>
+    <section aria-labelledby="next" class="solution-contact">
+      <div class="eyebrow">NEXT STEP</div><h2 id="next">Start with a real process, not a promise.</h2>
+      <p>Share the current workflow, tools, exceptions, access constraints and the result you want to measure. A proposed scope should come before any implementation or price commitment.</p>
+      <div class="hero-cta"><a href="/contact" class="btn-primary">Contact Emon</a><a href="/services" class="btn-outline">Ways to work together</a></div>
+    </section>
+  </div>
+</BaseLayout>
+<style>
+.solution-root { padding-top: 2rem; padding-bottom: 5rem; }
+.solution-crumb { display: flex; gap: .55rem; flex-wrap: wrap; align-items: center; font-size: .8rem; color: var(--brand-stone-600); }
+.solution-crumb a { text-decoration: underline; text-underline-offset: .2rem; }
+.solution-heading { padding: 3rem 0 2rem; max-width: 52rem; }
+.solution-heading h1 { font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.12; color: var(--brand-ink); margin-top: .75rem; letter-spacing: -.035em; }
+.solution-lead { font-size: 1.05rem; line-height: 1.8; margin-top: 1.35rem; color: var(--brand-stone-600); }
+.solution-bangla { font-family: 'Noto Sans Bengali', system-ui, sans-serif; line-height: 1.9; color: var(--brand-stone-700); margin-top: 1rem; }
+.solution-disclosure { font-size: .8rem; margin-top: 1.2rem; border-left: 2px solid var(--brand-red); padding-left: .8rem; color: var(--brand-stone-600); }
+.solution-section { padding-top: 3.2rem; margin-top: 2rem; border-top: 1px solid var(--brand-stone-200); }
+.solution-section h2, .solution-contact h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--brand-ink); margin: .5rem 0 1.3rem; }
+.solution-tags { list-style: none; display: flex; flex-wrap: wrap; gap: .6rem; }
+.solution-tags li { padding: .55rem .85rem; border: 1px solid var(--brand-stone-200); border-radius: .6rem; background: white; font-size: .88rem; }
+.solution-steps { list-style: none; display: grid; gap: .85rem; max-width: 52rem; }
+.solution-steps li { display: flex; gap: 1rem; align-items: start; padding: 1.1rem; background: white; border: 1px solid var(--brand-stone-200); border-radius: .8rem; }
+.step-number { color: var(--brand-red); font-weight: 800; padding-top: .1rem; }
+.solution-steps h3, .solution-faq h3 { color: var(--brand-ink); font-size: 1rem; }
+.solution-steps p, .solution-faq p, .solution-contact p { color: var(--brand-stone-600); font-size: .91rem; line-height: 1.75; margin-top: .35rem; }
+.solution-list { list-style: disc; padding-left: 1.4rem; max-width: 50rem; }
+.solution-list li { margin-bottom: .65rem; color: var(--brand-stone-700); line-height: 1.7; }
+.solution-note { color: var(--brand-stone-600); margin-top: 1.3rem; max-width: 50rem; font-size: .83rem; line-height: 1.7; }
+.solution-faq { display: grid; gap: 1rem; max-width: 50rem; }
+.solution-faq > div { background: white; border: 1px solid var(--brand-stone-200); border-radius: .8rem; padding: 1.2rem; }
+.solution-arrow { display: block; margin-top: .8rem; color: var(--brand-red); font-weight: 750; font-size: .84rem; }
+.solution-contact { background: white; padding: 2rem; border: 1px solid var(--brand-stone-200); border-radius: 1rem; margin-top: 3rem; }
+@media (max-width: 480px) { .solution-root { padding-top: 1.2rem; } .solution-heading { padding-top: 2rem; } .solution-contact { padding: 1.3rem; } }
+</style>
