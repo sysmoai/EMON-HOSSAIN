@@ -75,6 +75,10 @@ npm run preview
 - `/about` — canonical person/profile surface
 - `/writing` and `/blog` — build notes and draft topics
 - `/resources` — public-safe resources
+- `/solutions` — practical AI solution discovery hub
+- `/solutions/customer-operations` — enquiry, sales and CRM workflows
+- `/solutions/workflow-automation` — safe business process automation
+- `/solutions/websites-lead-operations` — owner-controlled web and leads
 - `/services` — ways to work together; no stale fixed public pricing
 - `/sysmoai` — commercial AI-systems context
 - `/bangladeshai` — research/public-interest context
@@ -125,3 +129,7 @@ Public inquiries: `contact@emonhossain.pro`
 ## Copyright
 
 © 2026 Emon Hossain. All rights reserved.
+
+## Solution-page evidence boundary (3 November 2026)
+
+Solution notes are illustrative designs, not completed case studies, fixed-price offers, independently measured results or guarantees. Bangladesh keyword volume, buyer willingness to pay and client delivery economics remain **UNKNOWN**. These pages must not go to production until the separately documented hosting, claims and DNS release gates pass.
