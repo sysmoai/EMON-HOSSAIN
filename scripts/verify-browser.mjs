@@ -167,4 +167,8 @@ try {
   }, null, 2));
   log('pages visited: ' + pageSummaries.length + '; failures: ' + failures.length + '; non-blocking axe findings: ' + warnings.length);
 }
-if (failures.length) process.exitCode = 1;
+// npm run preview spawns a child; release the CI runner even if the wrapper's
+// inherited pipes stay open after SIGTERM. All reports and screenshots were
+// awaited and the Chromium browser was closed above.
+await sleep(100);
+process.exit(failures.length ? 1 : 0);
