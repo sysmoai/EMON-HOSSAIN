@@ -5,7 +5,7 @@ const root = process.cwd();
 const site = 'https://emonhossain.pro';
 const failures = [];
 const check = (condition, message) => { if (!condition) failures.push(message); };
-const read = path => readFileSync(join(root, path), 'utf8');
+const read = path => readFileSync(path, 'utf8'); // Relative paths use the repository cwd; built paths are already absolute.
 const sitemap = read('public/sitemap.xml');
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
 const pathnameToHtml = pathname => {
