@@ -1,8 +1,5 @@
-# Robots
+# Robots — allow public pages and CSS/JS needed to render them
 User-agent: *
 Allow: /
-Sitemap: https://emonhossain.pro/sitemap.xml
-
-# Block admin paths
 Disallow: /admin
-Disallow: /_astro
+Sitemap: https://emonhossain.pro/sitemap.xml
