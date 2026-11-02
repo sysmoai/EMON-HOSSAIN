@@ -50,10 +50,11 @@ The older Indigo/Sky/Emerald gradient system is retired from the EMON master bra
 
 ## Tech Stack
 
-- Astro 4
-- Static HTML/CSS
-- Cloudflare Pages deployment target
-- GitHub Actions build verification
+- Astro 7.4.4 (pinned)
+- Node.js 22.23.4 via `.nvmrc` for CI and local builds
+- Static HTML/CSS; no application server in the built output
+- Cloudflare Pages is a proposed deployment target, **not verified as the actual domain origin**
+- GitHub Actions: build, release/SEO/security verification, static artifact output; **no automatic deployment**
 
 ## Local Development
 
@@ -75,6 +76,10 @@ npm run preview
 - `/about` — canonical person/profile surface
 - `/writing` and `/blog` — build notes and draft topics
 - `/resources` — public-safe resources
+- `/solutions` — practical AI solution discovery hub
+- `/solutions/customer-operations` — enquiry, sales and CRM workflows
+- `/solutions/workflow-automation` — safe business process automation
+- `/solutions/websites-lead-operations` — owner-controlled web and leads
 - `/services` — ways to work together; no stale fixed public pricing
 - `/sysmoai` — commercial AI-systems context
 - `/bangladeshai` — research/public-interest context
@@ -98,13 +103,9 @@ Same-name collisions are expected; the strategy is entity consistency, not name-
 
 Pull requests run a clean `npm ci` + `npm run build` verification workflow.
 
-The production deploy workflow is designed to:
+The active `.github/workflows/deploy.yml` is **verification-only** and deliberately does not publish a site. Do not enable the historical `gh-pages` branch deployment workflow, which can ignore build errors and attempt to publish the repository root.
 
-1. fail on install/build errors;
-2. require Cloudflare credentials;
-3. deploy the generated `dist/` output rather than the repository root.
-
-Do not treat a deployment as verified until the build passes and the production URL is checked after merge.
+Before any real release: confirm the owning Cloudflare account, origin mapping, correct Pages/Workers project, DNS/email backup, www certificate/redirect, staging screenshot QA, contact delivery and rollback. Deploy only the tested `dist/` artifact. Independent HTTPS and page-level checks are required after publication; neither GitHub merge nor a green CI proves production is updated.
 
 ## Repository Hygiene Gap
 
@@ -114,6 +115,8 @@ Historical commits currently contain tracked generated/dependency directories su
 git rm -r --cached node_modules dist .astro
 git add .gitignore package-lock.json
 git commit -m "chore: stop tracking generated artifacts"
+
+# Only in a dedicated reviewed branch, after inventorying paths and preserving source
 ```
 
 Keep `package-lock.json` tracked so `npm ci` remains deterministic.
@@ -125,3 +128,7 @@ Public inquiries: `contact@emonhossain.pro`
 ## Copyright
 
 © 2026 Emon Hossain. All rights reserved.
+
+## Solution-page evidence boundary (3 November 2026)
+
+Solution notes are illustrative designs, not completed case studies, fixed-price offers, independently measured results or guarantees. Bangladesh keyword volume, buyer willingness to pay and client delivery economics remain **UNKNOWN**. These pages must not go to production until the separately documented hosting, claims and DNS release gates pass.
