@@ -1,0 +1,114 @@
+---
+import SolutionPage from '../../components/SolutionPage.astro';
+const solution = {
+  "shortTitle": "Workflow automation",
+  "title": "AI Workflow Automation for SMEs | Emon Hossain",
+  "description": "Practical workflow automation with n8n, APIs, document handling, reliability testing and human approval for small business operations.",
+  "heading": "Make recurring work easier to run, review and recover.",
+  "lead": "Small teams move the same information between email, spreadsheets, forms and chat by hand. A reliable workflow begins with triggers, ownership, exceptions and recovery before adding an AI agent.",
+  "banglaSummary": "বারবার ডেটা কপি, রিপোর্ট তৈরি, অনুমোদন, নোটিফিকেশন ও কাজ হস্তান্তরের জন্য নিরাপদ অটোমেশন—যেখানে মানুষের নিয়ন্ত্রণ বজায় থাকে।",
+  "audiences": [
+    "Small business operators",
+    "Agencies coordinating repeatable delivery",
+    "Operations and administration teams",
+    "Founders managing several disconnected tools"
+  ],
+  "problems": [
+    {
+      "title": "Repeated data entry",
+      "detail": "The same order, customer or task details must be typed across different tools."
+    },
+    {
+      "title": "Memory-based handoffs",
+      "detail": "Work advances only if someone remembers to send a message or update a tracker."
+    },
+    {
+      "title": "Silent integration failure",
+      "detail": "An API error, duplicate event or missing approval leaves work unfinished and unreported."
+    },
+    {
+      "title": "No status visibility",
+      "detail": "The owner cannot reliably see what is queued, completed, blocked or waiting for approval."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Map one process",
+      "detail": "Document triggers, data sources, owners, expected outputs and exception cases before choosing tools."
+    },
+    {
+      "title": "Use clear rules first",
+      "detail": "Prefer deterministic validation and integration for data movement, notifications and status transitions."
+    },
+    {
+      "title": "Add bounded AI",
+      "detail": "Use models for classification or summaries only where a language judgment adds value; review the quality."
+    },
+    {
+      "title": "Keep approval gates",
+      "detail": "Use named human review for financial, public, destructive or sensitive actions."
+    },
+    {
+      "title": "Instrument and recover",
+      "detail": "Log failures, duplicates, retries and decisions; test rollback and manual fallback."
+    }
+  ],
+  "safeguards": [
+    "Keep API secrets out of code and prompts and restrict permissions to the minimum necessary.",
+    "Protect against duplicate webhook events and repeated side effects.",
+    "Test with staging data and verify failure alerts and manual fallback.",
+    "Separate business-unit data, credentials, audit logs and approvals.",
+    "Document ownership, monitoring, budget and cancellation procedures."
+  ],
+  "deliverables": [
+    "Current and target workflow maps with acceptance criteria.",
+    "Feasibility check for authorized APIs and existing software.",
+    "Scoped n8n, Make or custom prototype where appropriate.",
+    "Test plan covering valid input, invalid input, errors, retries and rollback.",
+    "An operator SOP, access inventory and running-cost model."
+  ],
+  "metrics": [
+    {
+      "name": "Completed jobs",
+      "method": "Share of valid triggered events reaching the correct final state, without counting duplicates twice."
+    },
+    {
+      "name": "Exception rate",
+      "method": "Number of manual interventions, technical failures and missing input cases recorded separately."
+    },
+    {
+      "name": "Human effort",
+      "method": "Measured time for the same unit of work before and after the pilot."
+    },
+    {
+      "name": "Total cost",
+      "method": "Integrations, hosting, API calls, reviews and maintenance."
+    }
+  ],
+  "questions": [
+    {
+      "question": "Does every process need an AI agent?",
+      "answer": "No. Rules, forms and integrations are often simpler and more reliable. AI should be used only for bounded interpretation tasks."
+    },
+    {
+      "question": "Who owns the system?",
+      "answer": "The agreement must specify control of accounts, source, data, backups, documentation and post-handoff support."
+    },
+    {
+      "question": "Can existing tools be reused?",
+      "answer": "Sometimes, depending on API availability, permission, licensing and the actual workflow."
+    }
+  ],
+  "related": [
+    {
+      "href": "/solutions/customer-operations",
+      "title": "Customer operations & support"
+    },
+    {
+      "href": "/solutions/websites-lead-operations",
+      "title": "Websites & lead operations"
+    }
+  ]
+};
+---
+<SolutionPage {...solution} />

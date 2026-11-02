@@ -1,0 +1,114 @@
+---
+import SolutionPage from '../../components/SolutionPage.astro';
+const solution = {
+  "shortTitle": "Customer operations",
+  "title": "AI Customer Support & Sales Workflow Automation | Emon Hossain",
+  "description": "Practical Bangla-friendly customer messaging, lead capture, CRM handoffs and order follow-up with human review for Bangladesh businesses.",
+  "heading": "Turn scattered sales messages into a reliable customer workflow.",
+  "lead": "Customer conversations arrive through Facebook, Instagram, WhatsApp and websites. A useful system keeps context, ownership and next action together; a chatbot alone does not solve lost handoffs or inconsistent orders.",
+  "banglaSummary": "বাংলা ও বাংলিশ মেসেজ, অর্ডার তথ্য, লিড ফলো-আপ এবং টিম হ্যান্ডঅফ—সবকিছু একটি দায়িত্বশীল প্রক্রিয়ায় আনার সম্ভাব্য পদ্ধতি।",
+  "audiences": [
+    "Facebook and Instagram sellers",
+    "Service businesses handling frequent enquiries",
+    "Small teams with shared inboxes",
+    "Bangla/English customer operations"
+  ],
+  "problems": [
+    {
+      "title": "Lost leads between channels",
+      "detail": "An enquiry is answered in one inbox but never reaches a responsible person's next-action list."
+    },
+    {
+      "title": "Inconsistent information",
+      "detail": "Staff quote policies or availability differently because no approved source is maintained."
+    },
+    {
+      "title": "Orders without an audit trail",
+      "detail": "Nobody can distinguish a new lead, an approved order, payment awaiting verification and completed delivery."
+    },
+    {
+      "title": "No escalation owner",
+      "detail": "Sensitive refund, complaint and AI uncertainty cases have no named reviewer."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Capture with permission",
+      "detail": "Use official channel integrations and consent-aware records; do not scrape messages or bypass platform rules."
+    },
+    {
+      "title": "Classify and route",
+      "detail": "Separate product questions, sales enquiries, existing orders, complaints and requests requiring human judgment."
+    },
+    {
+      "title": "Draft from approved information",
+      "detail": "Prepare Bangla/Banglish/English suggestions from maintained policies and product records; flag uncertain answers."
+    },
+    {
+      "title": "Review high-impact decisions",
+      "detail": "Require human confirmation for payment, refunds, account changes, unusual orders and final quotations."
+    },
+    {
+      "title": "Record outcome",
+      "detail": "Save minimal status, next action, time and responsible owner under agreed retention and access limits."
+    }
+  ],
+  "safeguards": [
+    "Use messaging providers' current permissions, policies and customer consent.",
+    "Never let AI independently confirm payment, issue refunds or grant account access.",
+    "Keep each client's credentials and customer records isolated from other businesses.",
+    "Audit hallucinations, language errors and failed handoffs before expanding automation.",
+    "Provide a visible manual fallback if an integration fails."
+  ],
+  "deliverables": [
+    "Current enquiry and order-process map, including exception cases.",
+    "A scoped channel-to-CRM or inbox-routing prototype where integrations permit.",
+    "Approved FAQ source, human checkpoints and test cases.",
+    "Staff SOP, access register, failure log and rollback notes.",
+    "A baseline-to-pilot measurement plan."
+  ],
+  "metrics": [
+    {
+      "name": "First useful response",
+      "method": "Time from a received inquiry to a compliant reply, compared against a recorded baseline."
+    },
+    {
+      "name": "Handoff completion",
+      "method": "Share of assigned leads acknowledged and resolved, excluding unknown statuses from success counts."
+    },
+    {
+      "name": "Correction rate",
+      "method": "Unsupported replies, human overrides and escalation cases audited by category."
+    },
+    {
+      "name": "Operating cost",
+      "method": "Provider fees, review effort, maintenance and cost per resolved enquiry."
+    }
+  ],
+  "questions": [
+    {
+      "question": "Can a bot reply to every WhatsApp or Instagram message?",
+      "answer": "No. Authorized actions depend on account permissions, messaging windows and current platform policies. Sensitive decisions require human review."
+    },
+    {
+      "question": "Can AI verify a payment?",
+      "answer": "Payment confirmation must rely on a verified authorized transaction source, not on an AI interpretation of a screenshot or a customer claim."
+    },
+    {
+      "question": "Is Bangla accuracy guaranteed?",
+      "answer": "No. Bangla and Banglish replies need real examples, review, policy checks and an escalation route."
+    }
+  ],
+  "related": [
+    {
+      "href": "/solutions/workflow-automation",
+      "title": "Business workflow automation"
+    },
+    {
+      "href": "/solutions/websites-lead-operations",
+      "title": "Websites & lead operations"
+    }
+  ]
+};
+---
+<SolutionPage {...solution} />

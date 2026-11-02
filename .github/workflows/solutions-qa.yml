@@ -1,0 +1,36 @@
+name: Verify AI Solution Pages
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pages/solutions/**'
+      - 'src/components/SolutionPage.astro'
+      - 'src/pages/index.astro'
+      - 'src/pages/services.astro'
+      - 'src/layouts/BaseLayout.astro'
+      - 'public/sitemap.xml'
+      - 'scripts/verify-solutions.mjs'
+      - '.github/workflows/solutions-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-solutions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Build site
+        run: npm run build
+      - name: Check solution pages and claims
+        run: node scripts/verify-solutions.mjs
