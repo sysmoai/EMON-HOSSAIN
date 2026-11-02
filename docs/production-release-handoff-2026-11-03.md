@@ -21,9 +21,9 @@
 5. Verify contact@emonhossain.pro mailbox route and send/receive independently. Do not claim the contact link works merely because mailto exists.
 
 ## Release candidate
-- Source stack: Astro 4; Node 22; `npm ci && npm run build`.
-- Check `node scripts/verify-release.mjs --built`; it verifies claim constraints and generated output.
-- GitHub Actions uploads a deployable `dist/` artifact; this does NOT publish it.
+- Current integrated candidate: [PR #6](https://github.com/sysmoai/EMON-HOSSAIN/pull/6), Astro **7.4.4**, Node **22.23.4**, pinned `package-lock.json`; `npm ci && npm run build`. Security upgrade PR #8 was safely integrated into PR #6. The actual public site remains on the old version until independently published and verified.
+- Run `node scripts/verify-release.mjs --built`, `node scripts/verify-solutions.mjs`, `node scripts/verify-site-integrity.mjs`, and `npm audit --audit-level=low`; all gates must pass for the exact candidate SHA. A green static build does not establish production availability.
+- GitHub Actions uploads a deployable `dist/` artifact; this does NOT publish it. Do NOT use legacy `gh-pages` branch's Cloudflare deployment workflow: it suppresses build/deploy errors and targets `.` instead of the independently verified static `dist/` output.
 - Compare the exact candidate to the previous production snapshot before changing anything. Stage in an isolated preview, inspect navigation, responsive layout, accessibility, OG image, key routes, and legal notices.
 - Publish the approved build to the verified existing hosting project using account-approved credentials. Never use speculative project/account names.
 - Preserve rollback target and immediately test production.
@@ -31,7 +31,7 @@
 ## Production acceptance criteria
 - Apex and www: valid HTTPS, no Cloudflare 525, canonical www-to-apex 301/308 redirect, no redirect loops.
 - Homepage headline uses current AI Systems Strategist & Automation Builder positioning and no old performance numbers or 4,999 BDT audit.
-- /about, /services, /contact, /writing, /resources, /sysmoai, /bangladeshai, /privacy and /terms render and navigate.
+- /about, /services, /contact, /writing, /resources, /sysmoai, /bangladeshai, /privacy, /terms and all four /solutions routes render and navigate.
 - /robots.txt and /sitemap.xml load; public CSS/JS crawlable; canonical and structured-data metadata correct.
 - Contact mailbox receives a real test message, or site clearly describes an alternate verified channel.
 - Observe live origin/response, deploy ID/hash, timestamps, screenshots, and record exact rollback instructions.
