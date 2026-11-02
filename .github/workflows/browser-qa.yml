@@ -1,0 +1,72 @@
+name: Browser & Accessibility Preview QA
+
+on:
+  push:
+    branches:
+      - release/integrated-2026-11-03
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.nvmrc'
+      - 'scripts/verify-browser.mjs'
+      - '.github/workflows/browser-qa.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'scripts/verify-browser.mjs'
+      - '.github/workflows/browser-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout candidate without repository token retention
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Use pinned project Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install project from lockfile
+        run: npm ci --no-fund
+
+      - name: Build the exact static candidate
+        run: npm run build
+
+      - name: Verify static source and pages before browser use
+        run: |
+          node scripts/verify-release.mjs --built
+          node scripts/verify-solutions.mjs
+          node scripts/verify-site-integrity.mjs
+
+      - name: Install pinned isolated QA packages without changing lockfile
+        run: npm install --no-save --package-lock=false --ignore-scripts --no-fund playwright@1.64.1 @axe-core/playwright@4.14.0
+
+      - name: Install Chromium and required runner libraries
+        run: npx playwright install --with-deps chromium
+
+      - name: Run desktop and mobile browser/axe checks
+        run: node scripts/verify-browser.mjs
+
+      - name: Save evidence even when browser QA fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: emonhossain-browser-qa
+          path: browser-qa-results/
+          if-no-files-found: warn
+          retention-days: 7
