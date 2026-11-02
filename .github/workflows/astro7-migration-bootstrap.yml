@@ -41,6 +41,11 @@ jobs:
 
       - name: Recreate lockfile from a clean dependency graph (no install scripts)
         run: |
+          # Historical repository commits contain tracked Node 4-era node_modules.
+          # Clean ONLY the disposable CI checkout, not the source repository.
+          # npm's lock resolver otherwise reuses the stale node_modules/.package-lock.json
+          # and leaves unused Vite 5/esbuild 0.21 entries in the new lockfile.
+          rm -rf -- node_modules .astro dist
           rm -- package-lock.json
           npm install astro@7.4.4 --save-exact --package-lock-only --ignore-scripts --no-audit --no-fund
           node -e 'const l=require("./package-lock.json"); console.log("Fresh-lock vite",l.packages["node_modules/vite"]?.version, "nested vite",l.packages["node_modules/astro/node_modules/vite"]?.version);'
