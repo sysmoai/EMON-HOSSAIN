@@ -39,8 +39,11 @@ jobs:
           git rev-parse HEAD
           npm pkg get dependencies.astro
 
-      - name: Resolve pinned Astro 7.4.4 and regenerate package-lock without scripts
-        run: npm install astro@7.4.4 --save-exact --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Recreate lockfile from a clean dependency graph (no install scripts)
+        run: |
+          rm -- package-lock.json
+          npm install astro@7.4.4 --save-exact --package-lock-only --ignore-scripts --no-audit --no-fund
+          node -e 'const l=require("./package-lock.json"); console.log("Fresh-lock vite",l.packages["node_modules/vite"]?.version, "nested vite",l.packages["node_modules/astro/node_modules/vite"]?.version);'
 
       - name: Install candidate from regenerated lockfile
         run: npm ci --no-fund
@@ -60,7 +63,7 @@ jobs:
       - name: Inventory dependency advisories after upgrade
         run: |
           npm audit --json > npm-audit-astro7.json || true
-          node -e 'const fs=require("node:fs");const x=JSON.parse(fs.readFileSync("npm-audit-astro7.json","utf8"));if(!x.metadata?.vulnerabilities)process.exit(1);console.log("Astro 7 advisory counts:",JSON.stringify(x.metadata.vulnerabilities));'
+          node -e 'const fs=require("node:fs");const x=JSON.parse(fs.readFileSync("npm-audit-astro7.json","utf8"));if(!x.metadata?.vulnerabilities)process.exit(1);const v=x.metadata.vulnerabilities;console.log("Astro 7 advisory counts:",JSON.stringify(v));if(v.critical>0||v.high>0||v.moderate>0){console.error("Not yet advisory-free; hold lockfile commit for investigation");process.exit(1)}'
 
       - name: Commit pinned package and lockfile only on isolated branch
         env:
